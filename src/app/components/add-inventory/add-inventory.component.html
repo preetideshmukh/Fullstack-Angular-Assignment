@@ -1,0 +1,41 @@
+<div fxFlex fxLayout="row" fxLayoutGap="15px">
+    <div class="form-group" fxFlex="20">
+        <input
+            type="text"
+            placeholder="Name"
+            class="form-control"
+            id="name"
+            (keyup)="updateValidation()"
+            [(ngModel)]="inventory.name"
+            name="name"
+        />
+    </div>
+
+    <div class="form-group" fxFlex="20">
+        <input
+            type="number"
+            placeholder="Price"
+            class="form-control"
+            id="price"
+            (keyup)="updateValidation()"
+            [(ngModel)]="inventory.price"
+            name="price"
+        />
+    </div>
+
+    <div class="form-group" fxFlex="20">
+        <textarea
+            placeholder="Description"
+            class="form-control"
+            id="description"
+            (keyup)="updateValidation()"
+            [(ngModel)]="inventory.description"
+            name="description"
+        ></textarea>
+    </div>
+
+    <div fxFlex="20" fxLayoutGap="10px">
+        <button [ngClass]="{disabled: !enableSave}" (click)="enableSave && saveInventory()" class="submit-button btn btn-success">Submit</button>
+        <button (click)="cancel()" class="submit-button btn btn-warning">Cancel</button>
+    </div>    
+</div>     
